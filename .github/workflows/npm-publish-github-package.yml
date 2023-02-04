@@ -12,6 +12,9 @@ jobs:
   publish-gpr:
     env:
       NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    permissions:
+      contents: read
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
