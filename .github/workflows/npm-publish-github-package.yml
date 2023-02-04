@@ -10,6 +10,8 @@ on:
 
 jobs:
   publish-gpr:
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -22,6 +24,14 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Test
+        run: |
+          echo =============env==============
+          env | grep NODE_AUTH_TOKEN
+          echo =============ls hla==============
+          ls -hla 
+          ls dist
+      - name: publish
+        run: npm publish
+     
+
