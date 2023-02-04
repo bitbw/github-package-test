@@ -1,5 +1,5 @@
 {
-  "name": "rollup-typescript-babel-eslint",
+  "name": "github-package-test-bitbw",
   "version": "1.0.0",
   "description": "A sample setup using Rollup and Babel to build TypeScript code, and using TypeScript and ESLint",
   "main": "dist/bundle.cjs.js",
